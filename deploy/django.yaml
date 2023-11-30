@@ -54,7 +54,6 @@ spec:
             claimName: django-app-pvc
       containers:
         - image: pyushkapil/django-app:latest
-          imagePullPolicy: Never
           name: app
           volumeMounts:
             - name: django-app-data
@@ -80,7 +79,6 @@ spec:
                   key: secret
 
         - image: pyushkapil/django-proxy:latest
-          imagePullPolicy: Never
           name: proxy
           ports:
             - containerPort: 8000
